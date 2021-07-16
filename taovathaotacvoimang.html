@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>Sample Screen:</p>
+    <input type="text" id="textst">
+    <button type="button" onclick="addst()">Add</button>
+    <button type="button" onclick="displayst()">Display</button>
+    <div id="result"></div>
+</form>
+<script>
+    let x = 0
+    let array = Array()
+    function addst() {
+        array[x] = document.getElementById('textst').value
+        alert("Element: " + array[x] + " Added at index " + x)
+        x++
+        document.getElementById('textst').value = ''
+    }
+    function displayst() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</body>
+</html>
